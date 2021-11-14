@@ -1,0 +1,15 @@
+.dashboard-actions {
+  text-align: right;
+  margin: 2em;
+}
+.poll-form-container {
+  margin : 2em;
+  background-color: lightgray;
+  padding: 1em;
+  border-radius: 5px;
+}
+
+.action-button-container {
+  margin-top: 110px;
+}
+

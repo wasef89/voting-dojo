@@ -1,0 +1,48 @@
+
+<div class="dashboard-actions">
+  <button class="btn btn-info" [routerLink]="['']">Back to Home</button>
+</div>
+<div class="poll-voting-container">
+  <div class="voting-options" *ngIf="!voted">
+    <h2 class="text-center">{{ poll.question }}</h2>
+    <div class="row">
+      <div class="col-sm-6" *ngFor="let option of poll.options; index as i">
+        <div class="poll-option">
+          <div class="text-center poll-option-title">{{ option.option }}</div>
+          <div class="text-center">
+            <button class="btn option-{{i}}"(click)="update(option._id)">Vote {{ option.option }}</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="voting-results" *ngIf="voted">
+    <div class="success-message" *ngIf="!successClose">
+      <i class="fa fa-info-circle"></i>
+      Thanks for voting! Here are the results ..
+      <i class="fa fa-times-circle close-btn" (click)="successClose=!successClose"></i>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h2 class="text-center">{{ poll.question }}</h2>
+      </div>
+      <div class="col-sm-6">
+        <chart [type]="chartType" [data]="chartData" [options]="chartOptions"></chart>
+
+      </div>
+      <div class="col-sm-6">
+          <div class="row" *ngFor="let option of poll.options; index as i">
+            <div class="col-sm-6">
+              <i class="fa fa-square option-text-{{i}}"></i> <b>{{ option.option }} </b>
+            </div>
+            <div class="col-sm-6 bold">
+              <b> {{ option.vote }} votes </b>
+            </div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

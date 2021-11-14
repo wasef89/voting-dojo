@@ -1,0 +1,47 @@
+
+<div class="dashboard-actions">
+  <button class="btn btn-info" [routerLink]="['']">Back to Home</button>
+</div>
+<div class = "poll-form-container">
+  <form (submit)="createPoll()" #form="ngForm">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="question">Your Question</label>
+          <textarea [(ngModel)]="newPoll.question" #question="ngModel" minlength="10" required  class="form-control" id="question" rows="5"  name="question"></textarea>
+          <div class="error text-danger" *ngIf="question.invalid && form.dirty">Question must be at least 10 characters.</div>
+        </div>
+        <div class="action-button-container">
+          <button  class="btn btn-success text-center btn-block" type="submit" value="Create Poll" [disabled]="form.invalid"> Submit Poll</button>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="form-group">
+          <label for="option1"> Option 1: <i class="text-danger">*</i></label>
+          <input class="form-control" type="text" name="option1" #option1="ngModel" [(ngModel)]="newPoll.option1.option" required>
+          <div class="error text-danger" *ngIf="option1.invalid && form.dirty"> Option 1 is required</div>
+        </div>
+        <div class="form-group">
+          <label for="option1"> Option 2: <i class="text-danger" >*</i></label>
+          <input class="form-control" type="text" name="option2" #option2="ngModel" [(ngModel)]="newPoll.option2.option" required>
+          <div class="error text-danger" *ngIf="option2.invalid && form.dirty"> Option 2 is required</div>
+        </div>
+        <div class="form-group">
+          <label for="option1"> Option 3:</label>
+          <input class="form-control" type="text" name="option3" #option3="ngModel" [(ngModel)]="newPoll.option3.option" >
+        </div>
+        <div class="form-group">
+          <label for="option1"> Option 4:</label>
+          <input class="form-control" type="text" name="option4" #option4="ngModel" [(ngModel)]="newPoll.option4.option">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+           <div class="required-note text-danger"> * Indicates a required field</div>
+        </div>
+    </div>
+
+  </form>
+</div>
+<div *ngFor="let error of errors">{{ error }}</div>

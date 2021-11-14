@@ -1,0 +1,35 @@
+.dashboard-actions {
+  margin: 2em;
+  text-align: right;
+}
+
+.dashboard-content {
+  margin: 2em;
+}
+
+.top-polls, .recent-polls {
+  padding: 1em;
+  background-color: lightgray;
+  min-height: 400px;
+  height: 400px;
+  border-radius: 5px;
+  overflow-y: auto;
+}
+
+.poll-item {
+  background-color: white;
+  padding: 5px;
+  border: 2px solid gray;
+  margin: 10px 0;
+}
+
+.icon-container, .poll-info {
+ display:inline-block;
+  vertical-align: top;
+
+}
+.icon-container i  {
+  font-size: 48px;
+  padding: 5px
+
+}

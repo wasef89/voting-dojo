@@ -1,0 +1,7 @@
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/fontawesome-4.7/css/font-awesome.min.css";
+
+*{
+    font-family:Arial, Helvetica, sans-serif;
+}
+
